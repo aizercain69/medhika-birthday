@@ -53,7 +53,7 @@ const CONFIG = {
         { image: "photos/21.jpg", caption: "inko angle ledha, asala prathi photo same angle😭😭" },
         { image: "photos/22.png", caption: "kapi ela undhi akka😏😏 or milkshake idk" },
         { image: "photos/23.png", caption: "the long hair era was peak bro, why'd u cut ittt😭😭" },
-        { image: "photos/24.png", caption: "Photo 1: Chill vibe." },
+        { image: "photos/24.png", caption: "aesthetic MEDHAUNTY fr" },
         { image: "photos/25.png", caption: "LinkedIn cover photo ikkadi nunche kada, ewwww😒😒" },
         { image: "photos/26.mp4", caption: "silly medhAUNTY loll!" },
         { image: "photos/27.mp4", caption: "W instagram filter bro, antha correct ga ela cheppindi😭😭" },
@@ -62,7 +62,7 @@ const CONFIG = {
         { image: "photos/30.jpg", caption: "the best photo in this whole collection man😭😭😭😭" },
         { image: "photos/31.png", caption: "there u go, ending it with your fav photo in your fav dress(according to what u said LO)😋😋😋" },
     ],
-    notepadMessages: ["       So, yes that person was u obv, ik you hate this day a lot that u js wanna skip this day every year,","        but since idk what the issue is(not like i'm asking u to tell) as in to why you hate this day so much, I js wanted to help", "       I thought If I forced u to lift the call or come to disc or smtg I could try and make your day a bit better", "       but it's alr, I get that you do not wanna do anything today, js live throught it","         but cmon man, I mean you are such a good person, a great friend and idt that one should celebrate their birthday like this", "       again this is js a suggestion so don't get angry at me for saying all this😭😭", "       but yes, I'm glad that you are my fren, thankful for all the discord calls we had, val games we played and the fights we had, lol!", "       np, do your thing today, I don wanna disturb... we can have fun another day😭😭"],
+    notepadMessages: ["       So, yes that person was u obv(regd the prev slides), ik you hate this day a lot that u js wanna skip this day every year,","        but since idk what the issue is(not like i'm asking u to tell) as in to why you hate this day so much, I js wanted to help", "       I thought If I forced u to lift the call or come to disc or smtg I could try and make your day a bit better", "       but it's alr, I get that you do not wanna do anything today, I get that","         but cmon man, I mean you are such a good person, a great friend and idt that one should celebrate their birthday like this", "       again this is js a suggestion so don't get angry at me for saying all this😭😭", "       but yes, I'm glad that you are my frend, thankful for all the discord calls we had, val games we played and the fights we had, lol!", "       no problem, do your thing today, I don wanna disturb... we can have fun another day😭😭"],
     birthdayMessage: "HAPPY BIRTHDAY RAWWWWWWW!!!!!! 🥳🥳🥳🥳🥳 ik you dont like all this, but cmon it's your bday at the end of the dayyyy🫣🫣",
     credits: `Thank you for being here, Medhika! And a special thanks for being an incredible friend.`
 };
@@ -350,4 +350,5 @@ document.addEventListener('DOMContentLoaded', () => {
             showPage(nextPage);
         });
     });
+
 });
