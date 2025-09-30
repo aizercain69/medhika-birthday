@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Surprise for ya</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
+    <!-- Animate.css for advanced animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Link to your local CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans">
+    
+    <!-- FIXED: now matches script.js -->
+    <audio id="birthday-song" src="song.mp3" loop></audio>
+
+    <main id="app-container" class="w-full min-h-screen flex items-center justify-center p-4 transition-all duration-500">
+
+        <!-- Transition Pop-up Modal -->
+        <div id="transition-popup" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50" style="display: none;">
+            <div class="card max-w-lg mx-auto animate__animated animate__zoomIn">
+                <p id="popup-message" class="text-2xl mb-6"></p>
+                <div id="popup-themed-buttons">
+                    <button id="popup-video-button" data-next="video-edits-page" class="btn bg-purple-500 hover:bg-purple-600 popup-action-button" style="display: none;">Check out the Edits</button>
+                    <button id="popup-poetry-button" data-next="poetry-page" class="btn bg-blue-500 hover:bg-blue-600 popup-action-button" style="display: none;">YESS SURRRR</button>
+                    <button id="popup-gallery-button" data-next="gallery-page" class="btn bg-teal-500 hover:bg-teal-600 popup-action-button" style="display: none;">Let's see them!</button>
+                    <button id="popup-notepad-button" data-next="notepad-page" class="btn bg-green-500 hover:bg-green-600 popup-action-button" style="display: none;">Let's Go!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="page w-full max-w-md mx-auto" style="display: block;">
+            <div class="card">
+                <h1 class="text-4xl font-bold mb-2" id="login-title">A Riddle for...</h1>
+                <p class="mb-6">What is my favourite nickname out of all the ones u have??.</p>
+                <input id="secret-word-input" type="password" placeholder="Secret word..." class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-50 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-white mb-4">
+                <button id="unlock-button" class="btn">Unlock</button>
+                <p id="error-message" class="text-black font-bold mt-4 animate-pulse" style="display: none;">Nah, Nah, Nah, THINK better broo!.</p>
+            </div>
+        </div>
+
+        <!-- History Page -->
+        <div id="history-page" class="page w-full max-w-2xl mx-auto" style="display: none;">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-4">Did you know Something?</h2>
+                <div class="bg-black bg-opacity-20 p-4 rounded-lg mb-6">
+                    <p id="history-fact" class="text-lg mb-4"></p>
+                    <img id="album-cover" src="" alt="Album Cover" class="album-cover-style mx-auto" style="display: none;">
+                </div>
+                <button class="next-section-button-trigger btn" data-popup="Well EDITING was always your timepass hobby, wanna take a look at some amazing works that u DID?" data-buttontheme="video">Wow!</button>
+            </div>
+        </div>
+
+        <!-- Video Edits Page -->
+        <div id="video-edits-page" class="page w-full max-w-4xl mx-auto" style="display: none;">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-4">Your Amazing Video Edits</h2>
+                <div class="relative mb-4 bg-black rounded-lg">
+                    <video id="video-player" src="" controls class="rounded-lg w-full" style="max-height: 60vh;"></video>
+                </div>
+                <p id="video-caption" class="text-lg italic mb-6 min-h-[2.5em]"></p>
+                <div class="flex justify-center gap-4 mb-6">
+                    <button id="prev-video-button" class="btn">Previous</button>
+                    <button id="next-video-button" class="btn">Next</button>
+                </div>
+                <button class="btn generic-next-section-button next-section-button-trigger" data-popup="Well, I know a writer who's a friend of mine, since you're a writer/poet can you rate some of these writings plsss(includes a poem asw)" data-buttontheme="poetry" style="display: none;">Next Section</button>
+            </div>
+        </div>
+
+        <!-- Poetry Page -->
+        <div id="poetry-page" class="page w-full max-w-4xl mx-auto" style="display: none;">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-4">Your Beautiful Stories</h2>
+                <div class="relative mb-4">
+                    <img id="poetry-image" src="" alt="Poetry or story" class="rounded-lg shadow-xl w-full h-auto object-contain mx-auto" style="max-height: 60vh;">
+                </div>
+                <p id="poetry-caption" class="text-lg italic mb-6 min-h-[2.5em]"></p>
+                <div class="flex justify-center gap-4 mb-6">
+                    <button id="prev-poetry-button" class="btn">Previous</button>
+                    <button id="next-poetry-button" class="btn">Next</button>
+                </div>
+                <button class="btn generic-next-section-button next-section-button-trigger" data-popup="Now let's have a look at the person who has all these amazing talents in them." data-buttontheme="gallery" style="display: none;">Next Section</button>
+            </div>
+        </div>
+        
+        <!-- Gallery Page -->
+        <div id="gallery-page" class="page w-full h-full flex flex-col items-center justify-center p-4" style="display: none;">
+            <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+            <div class="card w-full max-w-4xl mx-auto z-10">
+                <h2 class="text-3xl font-bold mb-4">The Main Event</h2>
+                <div class="relative mb-4 bg-black rounded-lg flex items-center justify-center" style="min-height: 50vh;">
+                    <img id="gallery-image" src="" alt="Gallery photo" class="rounded-lg shadow-xl w-full h-auto object-contain" style="max-height: 50vh; display: none;">
+                    <video id="gallery-video" src="" controls class="rounded-lg w-full" style="max-height: 50vh; display: none;"></video>
+                    <p id="gallery-caption" class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 rounded-b-lg"></p>
+                </div>
+                <div class="flex justify-center gap-4 mb-6">
+                    <button id="prev-gallery-button" class="btn">Previous</button>
+                    <button id="next-gallery-button" class="btn">Next</button>
+                </div>
+                <button class="btn generic-next-section-button next-section-button-trigger" data-popup="Ready for the final messages?" data-buttontheme="notepad" style="display: none;">Next Section</button>
+            </div>
+        </div>
+
+        <!-- Notepad Page -->
+        <div id="notepad-page" class="page w-full max-w-4xl mx-auto" style="display: none;">
+            <div class="paper animate__animated animate__zoomInDown">
+                <div class="paper-content">
+                    <div id="notepad-text" class="teks"></div>
+                </div>
+            </div>
+            <button data-next="birthday-page" id="notepad-continue-button" class="btn mt-6 opacity-0 transition-opacity duration-500">Continue</button>
+        </div>
+
+        <!-- Birthday Page -->
+        <div id="birthday-page" class="page w-full max-w-xl mx-auto text-center flex flex-col items-center justify-center" style="display: none;">
+            <div class="animate__animated animate__slideInDown">
+                 <img src="hbd.png" class="w-full max-w-sm mx-auto shadow-2xl rounded-lg">
+            </div>
+            <div class="mt-8">
+                 <p id="birthday-message" class="text-2xl italic mb-8 text-white bg-black bg-opacity-50 rounded-lg p-4">"..."</p>
+                 <button data-next="credits-page" class="btn">One Last Thing...</button>
+            </div>
+        </div>
+
+        <!-- Credits Page -->
+        <div id="credits-page" class="page w-full max-w-xl mx-auto" style="display: none;">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-4">Credits</h2>
+                <p id="credits-message" class="text-xl mb-6">...</p>
+                <p class="text-sm text-gray-300">Made with ❤️ by your friend.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- External scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <!-- FIXED: TypeIt v8 -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.0/dist/index.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
